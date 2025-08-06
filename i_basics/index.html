@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Basics</title>
+    <!-- * Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <!-- * Custom Css Link  -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ? Bootstrap nedir ? 
+     
+    * Bootstrap, HTML, CSS ve JavaScript'den oluşan bir front-end kütüphanesidir. Bootstrap, CSS'deki stil özelliklerini class'lar ile eşler ve bu classları kullanarak HTML elemanlarını stillendirmemizi sağlar. Bunun yanı sıra Bootstrap'in içerisinde hazır componentler bulunur. Bu componentler ile hızlıca arayüz elemanları oluşturabiliriz.
+
+    ! Özetle, şimdiye kadar HTML'de eleman oluşturup CSS'de bu elemanları stillendirme işlemini; HTML'de oluşturulan elemanlara class atayarak yapacağız.
+
+    ? Bootstrap'in faydalarından nasıl yararlanabiliriz?
+
+    * İlk olarak https://getbootstrap.com/ sitesine gidip Get Started kısmında bulunan CDN linki ile Bootstrap'in stil özelliklerini projemize dahil edebiliriz. Bunun yanında Bootstrap componentlerinin dinamik olaylarından (tıklanma, sürüklenme, vb.) yararlanmak için script tag'ini projemize eklememiz gerekecektir.
+
+    ? Kendi CSS kodumuzu artık yazmayacak mıyız?
+    
+    * Bootstrap işlerimizi büyük ölçüde kolaylaştırsa dahi tamamen CSS'in yerini alamaz. Çünkü Bootstrap renk, pozisyonlama, margin-padding gibi CSS özelliklerinde bizi kısıtlıyor. Bu durumda kendi CSS kodumuzu kullanacağız.
+
+    ! Kendi CSS kodumuz ve Bootstrap CSS'ini bir arada kullandığımızda, kendi CSS dosyamızın link bağlantısını daha aşağıda yapmalıyız.
+    
+    -->
+
+    <!-- ! Bootstrap classlarını yazarken hangi değerleri aldığını görmek ve otomatik tamamlamadan yararlanmak için VSCODE'un eklenti sekmesinden şu id'li eklentiyi kullanacağız: torresgol10.bootstrap-class-autocomplete  -->
+
+    <!-- * background-color(bg-**)
+     
+    Bootstrap'de CSS'deki background-color'ın karşılığı bg-[renkAdı] classıdır. Burada [renkAdı] yerine primary, secondary, danger, info, vb. kelimeler yazılır.
+
+    ! Bootstrap içerisinde yer alan renklerin dışında bir arkaplan rengi verilmek istenirse bunu kendi CSS kodumuzla yapabiliriz.
+    -->
+
+    <!-- * margin // padding(m-** // p-**)
+     
+    Bootstrap'de CSS'deki margin'in karşılığı m-[0---5] classı, padding'in karşılığı ise p-[0---5] classıdır. Buradaki [0---5] kısmındaki 0 minimum boşluğu, 5 ise maksimum boşluğu temsil eder.
+
+    0 ==> 0rem (0px)
+
+    1 ==> 0.25rem (4px)
+
+    2 ==> 0.5rem (8px)
+
+    3 ==> 1rem (16px)
+
+    4 ==> 1.5rem (24px)
+
+    5 ==> 3rem (48px)    
+
+    * Bootstrap'de m veya p dersek bu, sırasıyla ilgili elemana top, right, bottom ve left'den eşit margin veya padding uygular. Ama her yönden farklı margin veya padding vermek istersek bunu ms, me, mb, mt, ps, pe, pb, pt şeklinde yapabiliriz.
+
+    top ==> t   [padding-top -> pt // margin-top -> mt]
+
+    right ==> e [padding-right -> pe // margin-right -> me]
+
+    bottom ==> b [padding-bottom -> pb // margin-bottom -> mb]
+
+    left ==> s [padding-left -> ps // margin-left -> ms]
+
+    Bunların haricinde x ve y eksenlerinde ilgili elemanlara margin veya padding verebiliriz. Bunun içinse px, mx, py, my classları kullanacağız.
+
+    ! Bootstrap içerisinde yer alan spacing'in dışında bir spacing verilmek istenirse bunu kendi CSS kodumuzla yapabiliriz.
+    -->
+
+    <!-- * font-size [fs-[1---6]]
+     
+    Bootstrap'de CSS'deki font-size'ın karşılığı fs-[1---6] classıdır. Buradaki 1 en büyük yazı boyutuna karşılık gelirken 6 en küçük yazı boyutuna karşılık gelir.
+
+    ! Bootstrap içerisinde yer alan font-size'ların dışında bir font-size verilmek istenirse bunu kendi CSS kodumuzla yapabiliriz.
+    -->
+
+    <!-- * color  [text-[renkAdı]]
+     
+    CSS'deki color'ın Bootstrap'deki karşılığı text-[renkAdı] şeklindedir.
+
+    ! Bootstrap içerisinde yer alan renklerin dışında bir renk verilmek istenirse bunu kendi CSS kodumuzla yapabiliriz.
+    -->
+
+    <!-- * visibility [visible // invisible]
+     
+    Visibility elemanların görünürlüğünü kontrol eder. Bu özelliğin Bootstrap'deki karşılığı visible ve invisible classlarıdır.
+
+    visible -> Elemanı görünür kılar
+
+    invisible -> Elemanı görünmez kılar
+    -->
+
+    <!-- * text-align [text-[konum]]
+     
+    CSS'deki text-align'in Bootstrap'deki karşılığı text-[konum] şeklindedir.
+
+    start -> Sol tarafa yaslar
+
+    center -> Merkeze hizalar
+
+    end -> Sağ tarafa yaslar
+    -->
+
+    <!-- * width / height [w / h]
+     
+    CSS'deki bir elemanın genişlik ve yüksekliğini kontrol etmemizi sağlayan width ve height classlarının Bootstrap'deki karşılığı w-[değer] ve h-[değer] classlarıdır. Değerler sabittir:
+
+    -0 -> %0
+
+    -25 -> %25
+
+    -50 -> %50
+
+    -75 -> %75
+
+    -100 -> %100
+
+    ! Bootstrap içerisinde yer alan width-height dışında bir değer verilmek istenirse bunu kendi CSS kodumuzla yapabiliriz.
+    -->
+
+    <!-- * opacity [opacity-[0---100]]
+     
+    CSS'deki opacity'nin Bootstrap'deki karşılığı opacity-[0---100] şeklindedir. Buradaki değerler:
+
+    -0 -> Eleman görünmez
+
+    -25 -> Eleman %25 oranında görünür
+
+    -50 -> Eleman %50 oranında görünür
+
+    -75 -> Eleman %75 oranında görünür
+
+    -100 -> Eleman %100 oranında görünür
+    -->
+
+    <!-- * overflow -[taşmaDurumu]
+     
+    CSS'deki overflow'un Bootstrap'deki karşılığı overflow-[taşmaDurumu] şeklindedir. Buradaki taşmaDurumu kısmında visible, hidden, auto, scroll değerleri alır.
+
+    hidden -> Taşan kısmı gizlemek için kullanılır.
+
+    visible -> Taşan kısmı olduğu gibi göstermek için kullanılır.
+
+    auto -> Taşma olursa scroll ile yönetilir, olmazsa scroll görünmez.
+
+    scroll -> Her zaman scroll görünür (taşma olsun ya da olmasın).
+
+    * Overflow dediğimizde bu x ve y eksenlerindeki taşmayı kontrol etmemizi sağlar. Ama bunun yerine overflow-x veya overflow-y dersek bunlar sırasıyla x ve y eksenlerindeki taşmayı kontrol etmemizi sağlar.
+    -->
+
+    <!-- * Object-Fit [object-fit-[özellikAdı]]
+     
+    ! DİKKAT: object-fit-[özellikAdı] sınıfı Bootstrap 5 içerisinde yerleşik olarak bulunmaz. Bu sınıfı kullanmak için özel CSS yazılması gerekir.
+
+    contain: Resmi kapsamın içine, orijinal oranlarını koruyarak sığdırır.
+
+    cover: Resmi kapsamın tamamını kaplayacak şekilde kırparak sığdırır.
+
+    fill: Resmi kapsamın tamamını doldurur, orantı bozulabilir.
+
+    scale-down: Gerekirse küçültür, büyütmez.
+
+    none: Orijinal boyutlarıyla gösterir, taşma olabilir.
+    -->
+
+    <!-- * Pozisyonlama
+     
+    Bootstrap'de ilgili elemanları pozisyonlamak için:
+
+    Eğer ekranın belirli bir noktasına göre pozisyonlama yapılacaksa position-fixed veya sticky kullanılır. Bu class'ın yanında elemanın ekranın hangi konumuna hizalanacağı belirtilmelidir. [top, bottom, end, start şeklinde] Bu konumlar 0, 50, 100 gibi değerler alır.
+
+    Eğer ekrandaki bir elemana göre pozisyonlama yapılacaksa kapsayan elemana position-relative, pozisyonlanacak elemana ise position-absolute classı verilir. Bu durumda top, end, bottom, start sınıflarıyla konum belirtilir.
+
+    ! Pozisyonlama yapılırken eğer %10, %33, %67,... gibi özel değerler verilmek istenirse bunu kendi CSS kodumuzla yapmamız gerekir.
+    -->
+
+    <!-- * Shadow [shadow-[gölgeBoyutu]]
+     
+    CSS'deki box-shadow'un Bootstrap'deki karşılığı shadow-[gölgeBoyutu] şeklindedir. Buradaki gölgeBoyutu kısmına gelebilecek değerler:
+
+    none -> Herhangi bir shadow aktif etmez.
+
+    sm -> Elemanın etrafında ufak bir gölge oluşur.
+
+    -   -> Normal gölge
+
+    lg -> Daha büyük ve belirgin gölge
+    -->
+
+    <!-- * Border [border]
+     
+    Bootstrap'de bir elemanın etrafına border eklemek için border classı verilir. Border kalınlığı border-[0---5] ile ayarlanabilir. 0 -> border yok, 5 -> en kalın border'dır. Border rengi için border-[renkAdı] kullanılır.
+    -->
+
+    <!-- * Display [d-[değer]]
+     
+    CSS'de elemanların ekrandaki görünürlüğünü ayarlamak için d-[değer] classı kullanılır. Değerler:
+
+    none -> Eleman görünmez olur.
+
+    inline -> Inline element yapar.
+
+    block -> Block element yapar.
+
+    inline-block -> Inline-block element yapar.
+
+    flex -> Flexbox sistemini aktif eder.
+
+    * Flex Direction: flex-[row | row-reverse | column | column-reverse]
+
+    * Justify Content: justify-content-[start | center | end | between | around | evenly]
+
+    * Align Items: align-items-[start | center | end | baseline | stretch]
+
+    * Flex Wrap: flex-wrap-[wrap | nowrap]
+
+    todo: Grow and shrink // gap
+    -->
+
+    <div class="bg-primary mx-2 my-3 px-5 py-4 fs-2 text-danger text-center">
+      Udemig Akademiden Selamlar
+    </div>
+    <div class="bg-secondary mx-2 my-3 px-5 py-4 fs-2 text-white text-end">
+      Udemig Akademiden Selamlar-1
+    </div>
+    <div class="bg-warning mx-2 my-3 px-5 py-4 fs-2 text-danger">
+      Udemig Akademiden Selamlar-2
+    </div>
+    <div class="bg-danger mx-2 my-3 px-5 py-4 fs-2 text-success">
+      Udemig Akademiden Selamlar-3
+    </div>
+    <div class="bg-success mx-2 my-3 px-5 py-4 fs-2 text-info">
+      Udemig Akademiden Selamlar
+    </div>
+    <div class="bg-info mx-2 my-3 px-5 py-4 fs-2 w-75">
+      Udemig Akademiden Selamlar-1
+    </div>
+    <div class="bg-info-subtle mx-2 my-3 px-5 py-4 fs-2">
+      <p class="invisible">Udemig Akademiden Selamlar-2</p>
+    </div>
+
+    <div
+      style="height: 500px; background-color: red; margin: 10px; padding: 20px"
+    >
+      <div class="bg-success h-25">Eleman</div>
+    </div>
+
+    <p
+      style="
+        height: 400px;
+        width: 400px;
+        background-color: blue;
+        margin: 10px;
+        color: wheat;
+        padding: 10px;
+      "
+      class="overflow-scroll"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
+      alias. Laboriosam aut non laudantium perferendis recusandae deserunt,
+      distinctio rem quo cum quaerat vel quam veritatis quae. Laudantium nihil
+      ex exercitationem? Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Temporibus, alias. Laboriosam aut non laudantium perferendis
+      recusandae deserunt, distinctio rem quo cum quaerat vel quam veritatis
+      quae. Laudantium nihil ex exercitationem? Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Temporibus, alias. Laboriosam aut non
+      laudantium perferendis recusandae deserunt, distinctio rem quo cum quaerat
+      vel quam veritatis quae. Laudantium nihil ex exercitationem? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Temporibus, alias. Laboriosam
+      aut non laudantium perferendis recusandae deserunt, distinctio rem quo cum
+      quaerat vel quam veritatis quae. Laudantium nihil ex exercitationem? Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Temporibus, alias.
+      Laboriosam aut non laudantium perferendis recusandae deserunt, distinctio
+      rem quo cum quaerat vel quam veritatis quae. Laudantium nihil ex
+      exercitationem?
+    </p>
+
+    <button class="bg-success px-3 py-2 fs-3 button">Button</button>
+
+    <div
+      style="height: 200px"
+      class="bg-dark-subtle px-2 py-3 m-2 position-relative"
+    >
+      <p class="bg-primary position-absolute top-0 start-0">Eleman-1</p>
+      <p class="bg-secondary position-absolute top-0 end-0">Eleman-2</p>
+      <p class="bg-success position-absolute bottom-0 start-0">Eleman-3</p>
+      <p class="bg-light position-absolute end-0 bottom-0">Eleman-4</p>
+      <p class="bg-info position-absolute center-text">Eleman-5</p>
+      <p class="bg-warning position-absolute text">Eleman-6</p>
+    </div>
+
+    <div class="bg-secondary my-4 mx-2 p-3 fs-3 shadow-none">Shadow-None</div>
+    <div class="bg-primary my-4 mx-2 p-3 fs-3 shadow-sm">Shadow-Sm</div>
+    <div class="bg-success my-4 mx-2 p-3 fs-3 shadow">Shadow</div>
+    <div class="bg-danger my-4 mx-2 p-3 fs-3 shadow-lg">Shadow-Lg</div>
+
+    <!-- 
+    Bootstrap'de elemanlara x ekseninde ortalamak veya kenar boşluğu vermek için container classı kullanılır.
+    -->
+    <div class="bg-primary container py-3">
+      <button class="border-0">Button-0</button>
+      <button class="border-1 border-success">Button-1</button>
+      <button class="border-2 border-warning">Button-2</button>
+      <button class="border-3 border-danger">Button-3</button>
+      <button class="border-4 border-info">Button-4</button>
+      <button class="border-5 border-light bg-danger">Button-5</button>
+    </div>
+
+    <div
+      class="w-50 bg-black text-white m-3 text-center py-3 border border-4 border-danger border-end-0"
+    >
+      Border Örneği
+    </div>
+  </body>
+</html>

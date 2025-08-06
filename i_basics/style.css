@@ -1,0 +1,19 @@
+.button {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0080009c !important;
+  /* Bootstrap class'ları ve kendi css'imizin çakışması durumunda bizim css'imizin geçerli olduğunu belirtmek için çakışan stilin akabinde !important kullanılır.Bunun öncesinde ise kendi css dosyamızı Html kısmında bootstrap linkinin altında yazmalıyız. */
+}
+
+.center-text {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  top: 40px;
+  left: 40px;
+}
