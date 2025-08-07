@@ -8,12 +8,24 @@
 }
 
 .center-text {
-  top: 50%;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  display: none !important;
 }
 
 .text {
   top: 40px;
   left: 40px;
+}
+
+.logo {
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.logo:hover {
+  background-color: tomato;
+  border-color: green;
 }
