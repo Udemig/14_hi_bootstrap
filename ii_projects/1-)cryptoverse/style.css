@@ -17,6 +17,36 @@ body {
   color: var(--text-color);
 }
 
+#section-card {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+#section-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#section-card .icon {
+  background-color: var(--light-bg);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+#section-card .icon i {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+#section-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 /* * Header */
 header .navbar {
   background-color: var(--primary-color);
@@ -54,4 +84,55 @@ header .navbar button {
 header .navbar .fa-bars {
   color: var(--gray-color) !important;
   font-size: 1.8rem;
+}
+
+/* * Home */
+
+#home .carousel-item {
+  position: relative;
+}
+#home .carousel-item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.399), rgba(0, 0, 0, 0.399));
+  width: 100%;
+  height: 100%;
+}
+#home .carousel-item img {
+  height: 80vh;
+  object-fit: cover;
+}
+
+#home .carousel-item .carousel-caption {
+  margin-bottom: 80px;
+}
+#home .carousel-item .carousel-caption h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+#home .carousel-item .carousel-caption p {
+  font-size: 1.2rem;
+}
+
+/* Html kısmındaki birden fazla elemana ortak still vermek istediğimizde bunu ilgili elemanların adlarını , ile ayrıp tek {} içerisinde yazabiliriz.Ama bu durumda dahi eğer erişmemiz gereken elemanın kapsam sayısı fazla ise yine kod tekrarına düşeriz.Bunu enegellemek içinse :where(){} seçicisi kullanılır.Bu seçici bir kapsam içerisindeki birden fazla elemana tek bir noktada erişmek için kullanılır. */
+#home :where(.carousel-control-prev-icon, .carousel-control-next-icon) {
+  width: 60px;
+  height: 60px;
+  font-weight: bold;
+}
+
+/* * Popular Cryptos */
+#cards-wrapper {
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* * Features */
+#features {
+  background-color: var(--light-bg);
 }
