@@ -9,6 +9,7 @@
   --light-bg: #f8f9fa;
   --white-color: #ffffff;
   --gray-color: #ccc;
+  --star-color: #fdc106;
 }
 
 /* Global */
@@ -18,17 +19,15 @@ body {
 }
 
 #section-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
   cursor: pointer;
   transition: all 0.5s;
   border-radius: 10px;
-}
-#section-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
 }
 #section-card .icon {
   background-color: var(--light-bg);
@@ -135,4 +134,96 @@ header .navbar .fa-bars {
 /* * Features */
 #features {
   background-color: var(--light-bg);
+}
+
+/* * Testimonials */
+
+#testimonial-card {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  height: 225px;
+}
+#testimonial-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+#testimonial-card #user-icon {
+  font-size: 30px;
+  color: var(--secondary-color);
+}
+
+.fa-star {
+  color: var(--star-color);
+}
+
+/* * News */
+
+#news {
+  background-color: var(--light-bg);
+}
+
+#news #news-card {
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#news #news-card:hover figure img {
+  transform: scale(1.1);
+}
+
+#news #news-card figure {
+  position: relative;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+#news #news-card figure img {
+  transition: all 0.5s ease-in-out;
+}
+#news #news-card figure .news-category {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* * Contact */
+#contact-wrapper {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 860px;
+  margin: 2rem auto;
+  border-radius: 1rem;
+}
+#contact-wrapper h1 {
+  white-space: nowrap;
+  font-size: 30px;
+  font-weight: bold;
+}
+#contact-wrapper #info-item-icon {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+#contact-wrapper form textarea {
+  resize: none;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+footer #logo {
+  color: var(--secondary-color);
 }
